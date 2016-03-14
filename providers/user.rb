@@ -3,6 +3,10 @@ def user_exists?(username, connection)
 end
 
 def add_user(username, password, roles = [], database)
+  r = chef_gem "mongo" do
+    action :nothing
+  end
+  r.run_action(:install)
   require 'rubygems'
   require 'mongo'
 
