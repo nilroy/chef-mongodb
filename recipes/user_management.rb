@@ -1,4 +1,6 @@
-chef_gem 'mongo'
+chef_gem 'mongo' do
+  version '1.12.5'
+end
 
 users = []
 admin = node['mongodb']['admin']
