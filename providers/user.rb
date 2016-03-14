@@ -3,10 +3,6 @@ def user_exists?(username, connection)
 end
 
 def add_user(username, password, roles = [], database)
-  r = chef_gem "mongo" do
-    action :nothing
-  end
-  r.run_action(:install)
   require 'rubygems'
   require 'mongo'
 
@@ -41,10 +37,6 @@ end
 
 # Drop a user from the database specified
 def delete_user(username, database)
-
-  r = chef_gem "mongo" do
-    action :nothing
-  end
   require 'rubygems'
   require 'mongo'
 
@@ -64,9 +56,6 @@ end
 
 # Get the MongoClient connection
 def retrieve_db
-  r = chef_gem "mongo" do
-    action :nothing
-  end
   require 'rubygems'
   require 'mongo'
 
