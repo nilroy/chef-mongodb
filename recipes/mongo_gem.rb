@@ -10,7 +10,7 @@ if platform_family?('rhel')
   sasldev_pkg = 'cyrus-sasl-devel'
 else
   sasldev_pkg = 'libsasl2-dev'
-end 
+end
 
 package sasldev_pkg do
   action :nothing
@@ -19,5 +19,6 @@ end.run_action(:install)
 node['mongodb']['ruby_gems'].each do |gem, version|
   chef_gem gem do
     version version
-  end
+    action :nothing
+  end.run_action(:install)
 end
