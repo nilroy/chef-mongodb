@@ -2,6 +2,10 @@ chef_gem 'mongo' do
   version '1.12.5'
 end
 
+chef_gem 'bson_ext' do
+  version '1.12.5'
+end
+
 users = []
 admin = node['mongodb']['admin']
 
